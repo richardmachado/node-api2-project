@@ -28,12 +28,14 @@ if (!user) {
 
   return (
     <div className="App">
-      <h1>List of users</h1>
+      <h1>List of posts</h1>
       
       {user.map(users => 
         <div key ={users.id} className = "info">
         <p>{users.title}</p>
         <p>{users.contents}</p>
+        <button><a href={`http://localhost:5000/api/posts/${users.id}/comments`}>Comments</a></button>
+
        
         
         </div>
