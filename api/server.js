@@ -1,14 +1,16 @@
 const express = require('express');
-const cors = require("cors");
 
-const hubsRouter = require('../hubs/hubs-router.js');
+const postsRouter = require('../data/db-router');
 
 const server = express();
 
 server.use(express.json());
 
-server.use(cors())
+server.get('/', (req, res) => {
+    res.send(`Hello from Server.js`);
+});
 
-server.use('/api/posts', hubsRouter);
+server.use('/api/posts', postsRouter);
+
 
 module.exports = server;

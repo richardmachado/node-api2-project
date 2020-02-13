@@ -1,5 +1,7 @@
-const server = require('./api/server.js');
+const server = require('./api/server');
 
-server.listen(5000, () => {
-    console.log(`*** Server running on localhost:5000 ***`)
-})
+const port = 5000; 
+
+server.listen(port, () => {
+    console.log(`\n API running on port ${port} \n`);
+});
